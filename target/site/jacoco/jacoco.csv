@@ -1,0 +1,5 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Integración 1,es.upm.grise.prof.curso2025.integrador1,OperacionNulaException,3,0,0,0,2,0,1,0,1,0
+Integración 1,es.upm.grise.prof.curso2025.integrador1,CuentaBancaria,5,77,3,13,1,22,3,8,0,3
+Integración 1,es.upm.grise.prof.curso2025.integrador1,SaldoNegativoException,0,3,0,0,0,2,0,1,0,1
+Integración 1,es.upm.grise.prof.curso2025.integrador1,OperacionDuplicadaException,0,3,0,0,0,2,0,1,0,1

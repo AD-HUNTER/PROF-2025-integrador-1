@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CuentaBancaria.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Integración 1</a> &gt; <a href="index.source.html" class="el_package">es.upm.grise.prof.curso2025.integrador1</a> &gt; <span class="el_source">CuentaBancaria.java</span></div><h1>CuentaBancaria.java</h1><pre class="source lang-java linenums">// java
+package es.upm.grise.prof.curso2025.integrador1;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.ArrayList;
+import java.util.List;
+
+public class CuentaBancaria {
+
+    public String numeroCuenta;
+    public double saldoInicial;
+<span class="fc" id="L13">    public boolean admiteDescubierto = false;</span>
+    public List&lt;Operacion&gt; operaciones;
+
+<span class="fc" id="L16">    public CuentaBancaria(String numeroCuenta, double saldoInicial) {</span>
+<span class="fc" id="L17">        this.numeroCuenta = numeroCuenta;</span>
+<span class="fc" id="L18">        this.saldoInicial = saldoInicial;</span>
+<span class="fc" id="L19">        this.operaciones = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L20">    }</span>
+
+    public void addOperacion(Operacion operacion) {
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (operacion == null) {</span>
+<span class="fc" id="L24">            return; // evitar NPE y no añadir nulls</span>
+        }
+<span class="pc bpc" id="L26" title="1 of 2 branches missed.">        if (operaciones == null) {</span>
+<span class="nc" id="L27">            operaciones = new ArrayList&lt;&gt;();</span>
+        }
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        if (!operaciones.contains(operacion)) { // evita duplicados por identidad/equals</span>
+<span class="fc" id="L30">            operaciones.add(operacion);</span>
+        }
+<span class="fc" id="L32">    }</span>
+
+    public double getSaldoActual() {
+<span class="fc" id="L35">        double total = saldoInicial;</span>
+<span class="pc bpc" id="L36" title="1 of 2 branches missed.">        if (operaciones != null) {</span>
+<span class="fc bfc" id="L37" title="All 2 branches covered.">            for (Operacion op : operaciones) {</span>
+<span class="pc bpc" id="L38" title="1 of 2 branches missed.">                if (op != null) {</span>
+<span class="fc" id="L39">                    total += op.getImporte();</span>
+                }
+<span class="fc" id="L41">            }</span>
+        }
+<span class="fc bfc" id="L43" title="All 4 branches covered.">        if (!admiteDescubierto &amp;&amp; total &lt; 0.0) {</span>
+<span class="fc" id="L44">            total = 0.0;</span>
+        }
+<span class="fc" id="L46">        BigDecimal bd = BigDecimal.valueOf(total).setScale(2, RoundingMode.HALF_UP);</span>
+<span class="fc" id="L47">        return bd.doubleValue();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.14.202510111229</span></div></body></html>
