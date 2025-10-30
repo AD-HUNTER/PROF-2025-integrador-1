@@ -7,6 +7,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -160,4 +162,104 @@ class CuentaBancariaTest {
 
         assertEquals(10.13, saldo);
     }
+
+
+    @Test
+    void testAddOperacionCuandoOperacionesNull() {
+        CuentaBancaria cuenta = new CuentaBancaria("ES1111111111", 100.0);
+        cuenta.operaciones = null; // forzar la rama que inicializa la lista dentro de addOperacion
+
+        Operacion op = mock(Operacion.class);
+
+        cuenta.addOperacion(op);
+
+        assertNotNull(cuenta.operaciones);
+        assertEquals(1, cuenta.operaciones.size());
+        assertTrue(cuenta.operaciones.contains(op));
+    }
+
+    // java
+    @Test
+    void testAddOperacionDuplicadaPorEquals() {
+        CuentaBancaria cuenta = new CuentaBancaria("ES2222222222", 0.0);
+
+        TestOperacion op1 = new TestOperacion("id-igual", 10.0);
+        TestOperacion op2 = new TestOperacion("id-igual", 5.0); // same id -> equals true
+
+        cuenta.addOperacion(op1);
+        cuenta.addOperacion(op2); // debería considerarse duplicada por equals
+
+        assertEquals(1, cuenta.operaciones.size());
+        assertTrue(cuenta.operaciones.contains(op1));
+    }
+
+
+    @Test
+    void testAddOperacionDuplicadaPorIdentidad() {
+        CuentaBancaria cuenta = new CuentaBancaria("ES3333333333", 0.0);
+
+        Operacion op = mock(Operacion.class);
+
+        cuenta.addOperacion(op);
+        cuenta.addOperacion(op); // mismo objeto -> no duplicar
+
+        assertEquals(1, cuenta.operaciones.size());
+    }
+
+    @Test
+    void testGetSaldoActualConOperacionNullEnLista() {
+        CuentaBancaria cuenta = new CuentaBancaria("ES4444444444", 1000.0);
+
+        Operacion op = mock(Operacion.class);
+        when(op.getImporte()).thenReturn(250.0);
+
+        cuenta.operaciones = new ArrayList<>();
+        cuenta.operaciones.add(null); // verificar que se ignoran nulls en la suma
+        cuenta.operaciones.add(op);
+
+        double saldo = cuenta.getSaldoActual();
+
+        assertEquals(1250.0, saldo);
+        verify(op, times(1)).getImporte();
+    }
+
+    static class TestOperacion implements Operacion {
+        private final String id;
+        private final double importe;
+
+        TestOperacion(String id, double importe) {
+            this.id = id;
+            this.importe = importe;
+        }
+
+        @Override
+        public long getId() {
+            return 0;
+        }
+
+        @Override
+        public String getConcepto() {
+            return "";
+        }
+
+        @Override
+        public double getImporte() {
+            return importe;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            TestOperacion that = (TestOperacion) o;
+            return id.equals(that.id);
+        }
+
+        @Override
+        public int hashCode() {
+            return id.hashCode();
+        }
+    }
+
+
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="2.67" tests="15" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="2.08" tests="19" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="22"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-22\bin"/>
-    <property name="sun.java.command" value="C:\Users\asack\AppData\Local\Temp\surefire2996198655091675120\surefirebooter-20251029203130845_3.jar C:\Users\asack\AppData\Local\Temp\surefire2996198655091675120 2025-10-29T20-31-30_639-jvmRun1 surefire-20251029203130845_1tmp surefire_0-20251029203130845_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\asack\AppData\Local\Temp\surefire14801599516118702681\surefirebooter-20251030115901552_3.jar C:\Users\asack\AppData\Local\Temp\surefire14801599516118702681 2025-10-30T11-59-01_369-jvmRun1 surefire-20251030115901552_1tmp surefire_0-20251030115901552_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\asack\Documents\Profundizacion en ingenieria del software\Integrador1\PROF-2025-integrador-1\target\test-classes;C:\Users\asack\Documents\Profundizacion en ingenieria del software\Integrador1\PROF-2025-integrador-1\target\classes;C:\Users\asack\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\asack\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\asack\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\asack\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\asack\.m2\repository\org\junit\vintage\junit-vintage-engine\5.10.2\junit-vintage-engine-5.10.2.jar;C:\Users\asack\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\asack\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\asack\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\asack\.m2\repository\org\mockito\mockito-core\5.10.0\mockito-core-5.10.0.jar;C:\Users\asack\.m2\repository\net\bytebuddy\byte-buddy\1.14.11\byte-buddy-1.14.11.jar;C:\Users\asack\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.11\byte-buddy-agent-1.14.11.jar;C:\Users\asack\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\asack\.m2\repository\org\mockito\mockito-junit-jupiter\5.10.0\mockito-junit-jupiter-5.10.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\asack\AppData\Local\Temp\surefire2996198655091675120\surefirebooter-20251029203130845_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\asack\AppData\Local\Temp\surefire14801599516118702681\surefirebooter-20251030115901552_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="22.0.1+8-16"/>
@@ -58,25 +58,29 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="66.0"/>
   </properties>
-  <testcase name="testGetSaldoActualLimiteDescubierto" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="2.547">
+  <testcase name="testGetSaldoActualLimiteDescubierto" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="1.89">
     <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\asack\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.11\byte-buddy-agent-1.14.11.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
 ]]></system-err>
   </testcase>
-  <testcase name="testRedondeoConTresDecimales" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.008"/>
-  <testcase name="testAddOperacionDuplicada" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.005"/>
-  <testcase name="testAddOperacionValida" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.004"/>
-  <testcase name="testAddOperacionNula" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.0"/>
-  <testcase name="testConstructorInicializaCuentaCorrectamente" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.0"/>
-  <testcase name="testGetSaldoActualConVariasOperaciones" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.013"/>
-  <testcase name="testRedondeoConCuatroDecimales" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.0"/>
-  <testcase name="testGetSaldoActualSinOperaciones" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.0"/>
-  <testcase name="testRedondeoHaciaArriba" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.0"/>
-  <testcase name="testGetSaldoActualRedondeoADosDecimales" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.016"/>
-  <testcase name="testGetSaldoActualSinDescubiertoDevuelveCero" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.0"/>
-  <testcase name="testGetSaldoActualConOperacionPositiva" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.0"/>
-  <testcase name="testGetSaldoActualConDescubiertoPermiteSaldoNegativo" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.0"/>
-  <testcase name="testGetSaldoActualConOperacionNegativa" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.016"/>
+  <testcase name="testRedondeoConTresDecimales" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.01"/>
+  <testcase name="testGetSaldoActualConOperacionNullEnLista" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.03"/>
+  <testcase name="testAddOperacionDuplicada" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.007"/>
+  <testcase name="testAddOperacionValida" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.006"/>
+  <testcase name="testAddOperacionNula" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.005"/>
+  <testcase name="testConstructorInicializaCuentaCorrectamente" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.005"/>
+  <testcase name="testAddOperacionDuplicadaPorEquals" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.005"/>
+  <testcase name="testGetSaldoActualConVariasOperaciones" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.007"/>
+  <testcase name="testAddOperacionCuandoOperacionesNull" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.002"/>
+  <testcase name="testRedondeoConCuatroDecimales" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.003"/>
+  <testcase name="testGetSaldoActualSinOperaciones" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.002"/>
+  <testcase name="testRedondeoHaciaArriba" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.002"/>
+  <testcase name="testAddOperacionDuplicadaPorIdentidad" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.002"/>
+  <testcase name="testGetSaldoActualRedondeoADosDecimales" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.004"/>
+  <testcase name="testGetSaldoActualSinDescubiertoDevuelveCero" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.002"/>
+  <testcase name="testGetSaldoActualConOperacionPositiva" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.004"/>
+  <testcase name="testGetSaldoActualConDescubiertoPermiteSaldoNegativo" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.005"/>
+  <testcase name="testGetSaldoActualConOperacionNegativa" classname="es.upm.grise.prof.curso2025.integrador1.CuentaBancariaTest" time="0.001"/>
 </testsuite>

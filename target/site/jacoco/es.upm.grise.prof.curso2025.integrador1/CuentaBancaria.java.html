@@ -23,8 +23,8 @@ public class CuentaBancaria {
 <span class="fc bfc" id="L23" title="All 2 branches covered.">        if (operacion == null) {</span>
 <span class="fc" id="L24">            return; // evitar NPE y no añadir nulls</span>
         }
-<span class="pc bpc" id="L26" title="1 of 2 branches missed.">        if (operaciones == null) {</span>
-<span class="nc" id="L27">            operaciones = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        if (operaciones == null) {</span>
+<span class="fc" id="L27">            operaciones = new ArrayList&lt;&gt;();</span>
         }
 <span class="fc bfc" id="L29" title="All 2 branches covered.">        if (!operaciones.contains(operacion)) { // evita duplicados por identidad/equals</span>
 <span class="fc" id="L30">            operaciones.add(operacion);</span>
@@ -35,7 +35,7 @@ public class CuentaBancaria {
 <span class="fc" id="L35">        double total = saldoInicial;</span>
 <span class="pc bpc" id="L36" title="1 of 2 branches missed.">        if (operaciones != null) {</span>
 <span class="fc bfc" id="L37" title="All 2 branches covered.">            for (Operacion op : operaciones) {</span>
-<span class="pc bpc" id="L38" title="1 of 2 branches missed.">                if (op != null) {</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">                if (op != null) {</span>
 <span class="fc" id="L39">                    total += op.getImporte();</span>
                 }
 <span class="fc" id="L41">            }</span>
